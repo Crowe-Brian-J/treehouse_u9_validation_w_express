@@ -39,7 +39,7 @@ router.post('/users', (req, res) => {
   } else if (password.length < 8 || password.length > 20) {
     errors.push('Your password should be between 8 and 20 characters long.')
   } else {
-    password = bcrypt.hashSync(password, 10)
+    user.password = bcrypt.hashSync(password, 10)
   }
 
   // Add the user to the `users` array if no errors.
