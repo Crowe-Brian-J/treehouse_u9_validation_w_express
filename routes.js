@@ -36,10 +36,13 @@ router.post('/users', (req, res) => {
   if (errors.length > 0) {
     // Return validation errors to the client
     res.status(400).json({ errors })
-  }
+  } else {
+    // Add the user to the 'users' array
+    users.push(user)
 
-  // Set the status to 201 Created and end the response.
-  res.status(201).end()
+    // Set the status to 201 Created and end the response.
+    res.status(201).end()
+  }
 })
 
 module.exports = router
