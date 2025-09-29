@@ -31,7 +31,6 @@ router.post('/users', (req, res) => {
     errors.push('Please provide a value for "email".')
   }
 
-  console.log(errors.length)
   // Add the user to the `users` array if no errors.
   if (errors.length > 0) {
     // Return validation errors to the client
